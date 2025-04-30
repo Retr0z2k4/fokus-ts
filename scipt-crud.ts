@@ -47,6 +47,17 @@ const atualizarUI = () =>  {
 </svg>
 `
     const ulTarefas = document.querySelector('app__section-task-list')
+    const formAdicionarTarefa = document.querySelector<HTMLFormElement>('app__form-add-task')
+    const btnAdicionarTarefa = document.querySelector<HTMLButtonElement>('.app__button--add-task')
+
+    if (!btnAdicionarTarefa) {
+        throw Error("O elemento btnAdicionarTarefa não foi encontrado")
+    }
+
+    btnAdicionarTarefa.onclick = () => {
+        formAdicionarTarefa?.classList.toggle('hidden')
+    }
+
     if (ulTarefas) {
          ulTarefas.innerHTML = ''
     }
